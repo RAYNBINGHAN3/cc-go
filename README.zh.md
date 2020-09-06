@@ -1,6 +1,6 @@
 # CC-GO
  
-简体中文 | [English](./README.md)
+简体中文 | [English](https://github.com/RAYNBINGHAN3/cc-go)
  
 基于goroutine的简单CC脚本.
 
