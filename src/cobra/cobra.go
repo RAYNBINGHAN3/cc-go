@@ -4,6 +4,7 @@ import (
 	"cc-go-attack/src"
 	"errors"
 	"fmt"
+	"github.com/fatih/color"
 	"github.com/spf13/cobra"
 	"os"
 	"strconv"
@@ -65,13 +66,13 @@ func Exec() {
 func printReport(cc *src.CC)  {
 	fmt.Println()
 	fmt.Println()
-	fmt.Println("|------------------------------------------------------------------|")
-	fmt.Println("| attack url: "+cc.Url)
-	fmt.Println("|------------------------------------------------------------------|")
-	fmt.Println("| total times: "+ times)
-	fmt.Println("|------------------------------------------------------------------|")
-	fmt.Println("| concurrent workers: "+ workers)
-	fmt.Println("|------------------------------------------------------------------|")
-	fmt.Println("| total requests: "+strconv.FormatInt(int64(cc.Report.Request), 10))
-	fmt.Println("|------------------------------------------------------------------|")
+	color.Cyan("|------------------------------------------------------------------|")
+	color.Cyan("| attack url: "+ cc.Url)
+	color.Cyan("|------------------------------------------------------------------|")
+	color.Cyan("| total times: "+ times)
+	color.Cyan("|------------------------------------------------------------------|")
+	color.Cyan("| concurrent workers: "+ workers)
+	color.Cyan("|------------------------------------------------------------------|")
+	color.Cyan("| total requests: "+strconv.FormatInt(int64(cc.Report.Request), 10))
+	color.Cyan("|------------------------------------------------------------------|")
 }

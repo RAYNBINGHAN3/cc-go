@@ -2,6 +2,7 @@ package src
 
 import (
 	"fmt"
+	"github.com/fatih/color"
 	"gopkg.in/go-playground/validator.v9"
 	"io"
 	"io/ioutil"
@@ -44,6 +45,7 @@ func (c *CC) New() error {
 
 func (c *CC) Start() {
 	tick := time.Tick(1 * time.Second)
+	d := color.New(color.FgCyan, color.Bold)
 	for i := 0; i < c.Worker; i++ {
 		go func() {
 			for {
@@ -51,7 +53,7 @@ func (c *CC) Start() {
 				case <-(*c.Scheduler.Signal):
 					return
 				case <-tick:
-					fmt.Printf("\rworkers: %d | times: %d | toal requests: %d ", c.Worker, c.Time, c.Report.Request)
+					d.Printf("\rrolling:  workers: %d | times: %d | toal requests: %d ", c.Worker, c.Time, c.Report.Request)
 				default:
 					resp, err := get(c.Url, c.useragent.random())
 					atomic.AddInt32(&c.Report.Request, 1)
