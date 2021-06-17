@@ -1,7 +1,7 @@
 # CC-GO
 English | [简体中文](./README.zh.md)
 
-Script to perform a CC DDOS by Go
+Script to perform a CC DDOS by Go (for test only)
 
 ## Usage
 
